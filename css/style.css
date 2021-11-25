@@ -1,0 +1,299 @@
+* {
+    margin: auto;
+}
+
+body {
+    background-image: url(../images/background.jpg);
+
+}
+
+h1 {
+    background-color: rgba(245, 245, 245, 0.274);
+    color: rgb(255, 255, 255);
+    width: 1150x;
+    height: 10px;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 5px;
+
+}
+
+.flagged {
+    border-radius: 10px;
+    border-width: 2px;
+    text-align: center;
+    border-style: solid;
+    border-color: rgba(255, 0, 0, 0.7);
+}
+
+.flagged::before {
+    content: "🚩";
+}
+
+.border {
+    width: 40px;
+    height: 40px;
+}
+
+.level {
+    width: 250px;
+    height: 50px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    border-radius: 400px;
+}
+
+.level button {
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 249, 0.796);
+    border-radius: 10px 40px 10px 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.844);
+    border-color: rgba(255, 255, 255, 0.672);
+    background: linear-gradient(45deg, rgba(47, 7, 225, 0.747),
+            rgba(255, 255, 255, 0.131),
+            rgba(243, 243, 245, 0.2),
+            rgba(252, 252, 252, 0.056),
+            rgba(133, 2, 240, 0.795));
+    width: 80px;
+    height: 35px;
+    cursor: pointer;
+    padding-right: 15px;
+    font-family: cursive;
+    font-style: oblique;
+    margin-top: 35px;
+    border-radius: 10px 40px 10px 40px;
+    font-size: 18px;
+}
+
+.score {
+    border-color: rgb(8, 134, 202);
+    background: linear-gradient(45deg, rgba(47, 7, 225, 0.747),
+            rgba(255, 255, 255, 0.131),
+            rgba(243, 243, 245, 0.2),
+            rgba(252, 252, 252, 0.056),
+            rgba(133, 2, 240, 0.795));
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 150px;
+    margin-top: 60px;
+    margin-right: 900px;
+    border-radius: 10px 40px 10px 40px;
+    font-size: 18px;
+    font-family: cursive;
+    font-style: oblique;
+    color: rgba(255, 255, 255, 0.96);
+    border-color: rgba(247, 246, 246, 0.529);
+    border-width: 2px;
+    border-style: solid;
+    box-shadow: 0 5px 15px rgba(100, 1, 170, 0.678);
+    padding-left: 20px;
+}
+
+.timer {
+    border-color: rgb(8, 134, 202);
+    background: linear-gradient(45deg, rgba(47, 7, 225, 0.747),
+            rgba(255, 255, 255, 0.131),
+            rgba(243, 243, 245, 0.2),
+            rgba(252, 252, 252, 0.056),
+            rgba(133, 2, 240, 0.795));
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 150px;
+    margin-top: 100px;
+    margin-right: 900px;
+    border-radius: 10px 40px 10px 40px;
+    font-size: 18px;
+    font-family: cursive;
+    font-style: oblique;
+    color: rgba(255, 255, 255, 0.96);
+    border-color: rgba(247, 246, 246, 0.529);
+    border-width: 2px;
+    border-style: solid;
+    box-shadow: 0 5px 15px rgba(100, 1, 170, 0.678);
+    padding-left: 20px;
+}
+
+.unClickedCell {
+    height: 28px;
+    width: 32px;
+    background: linear-gradient(20deg, rgba(228, 221, 255, 0.145),
+            rgba(255, 255, 255, 0.467),
+            rgba(255, 255, 255, 0.734),
+            rgba(255, 255, 255, 0.234),
+            rgba(255, 255, 255, 0.364));
+    color: rgba(0, 0, 0, 0.987);
+    font-family: cursive;
+    border-radius: 3px;
+    border-color: rgba(255, 255, 255, 0.268);
+    border-style: solid;
+    border-width: 3px;
+    cursor: pointer;
+    top: 0.4px;
+    box-shadow: 1px 0px #ffffff,
+        12px 5px 2px rgba(0, 0, 0, 0.274);
+}
+
+.unClickedCell:hover {
+    height: 28px;
+    width: 32px;
+    background: linear-gradient(20deg, rgba(228, 221, 255, 0.145),
+            rgba(255, 255, 255, 0.467),
+            rgba(4, 143, 218, 0.07),
+            rgba(255, 255, 255, 0.152),
+            rgba(235, 235, 235, 0.755));
+    color: rgba(0, 0, 0, 0.987);
+    font-family: cursive;
+    border-radius: 3px;
+    border-color: rgba(255, 255, 255, 0.268);
+    border-style: solid;
+    border-width: 3px;
+    cursor: pointer;
+    top: 0.4px;
+    box-shadow: 1px 0px #ffffff,
+        12px 5px 2px rgba(0, 0, 0, 0.274);
+}
+
+
+/* .medium {
+    border: 1px solid rgb(224, 197, 255);
+    height: 30px;
+    width: 10px;
+    background: linear-gradient(45deg, rgb(100, 233, 226),
+            rgb(94, 200, 238),
+            rgb(234, 228, 253),
+            rgba(199, 193, 253, 0.904),
+            rgba(138, 125, 255, 0.904));
+    color: rgba(0, 0, 0, 0.987);
+    font-family: cursive;
+    border-radius: 2px;
+    cursor: pointer;
+} */
+
+.clickedCell {
+    height: 28px;
+    width: 32px;
+    background: linear-gradient(45deg, rgba(47, 7, 225, 0.747),
+            rgba(255, 255, 255, 0.131),
+            rgba(243, 243, 245, 0.2),
+            rgba(252, 252, 252, 0.056),
+            rgba(133, 2, 240, 0.795));
+    border: 1px solid rgb(93, 255, 220);
+    color: rgba(0, 0, 0, 0.583);
+    border-radius: 10px;
+    font-size: 30px;
+    text-align: center;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.356);
+    border-left: 1px solid rgba(136, 136, 136, 0.87);
+    border-top: 1px solid rgba(92, 92, 92, 0.356);
+    border-right: 1px solid rgba(53, 56, 53, 0.87);
+
+}
+
+.modal {
+    margin-right: 100px;
+    display: none;
+    background: linear-gradient(10deg, rgba(214, 203, 255, 0.193),
+            rgba(255, 255, 255, 0.111),
+            rgba(134, 101, 226, 0.289),
+            rgba(96, 41, 247, 0.213),
+            rgba(93, 0, 242, 0.939));
+    color: rgb(255, 255, 255);
+    border-color: rgba(255, 255, 255, 0.371);
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    font-size: 15px;
+    color: #f6f7fa;
+    text-align: center;
+    padding-top: 20px;
+    font-family: 'Comic Sans MS',
+        cursive,
+        sans-serif;
+    text-shadow: 0px 0px 0 rgb(0, 0, 0),
+        0px -1px 0 rgb(5, 21, 255),
+        0px -2px 0 rgba(0, 0, 0, 0.22);
+    width: 200px;
+    height: 50px;
+    box-shadow: 0 1px 10px 10px rgba(0, 0, 0, 0.179);
+
+}
+
+.modal button {
+    color: white;
+    margin-left: 5px;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    width: 100px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(238, 238, 87);
+    font-family: 'Comic Sans MS',
+        cursive,
+        sans-serif;
+    text-shadow: 1px 2px 0 rgba(9, 3, 3, 0.234),
+        0px -1px 0 rgb(4, 0, 73);
+    font-size: 12px;
+    border-radius: 17px;
+    background: linear-gradient(10deg, rgba(214, 203, 255, 0.193),
+            rgba(255, 255, 255, 0.111),
+            rgba(134, 101, 226, 0.289),
+            rgba(96, 41, 247, 0.213),
+            rgba(93, 0, 242, 0.939));
+    box-shadow: 0 1px 10px 10px rgba(0, 0, 0, 0.179);
+}
+
+.modal button:hover {
+    padding-top: 3px;
+    width: 99px;
+    height: 39px;
+    cursor: pointer;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(233, 233, 124);
+    font-family: 'Comic Sans MS',
+        cursive,
+        sans-serif;
+    text-shadow: 1px 0px 0 rgb(253, 253, 253),
+        0px 10px 10 rgb(255, 255, 255);
+    font-size: 12px;
+    border-radius: 50px;
+    background: linear-gradient(120deg, #1900ff00, #e1d7d741);
+    box-shadow: 0 1px 10px 10px rgba(0, 0, 0, 0.179);
+
+}
+
+
+/* .easy{
+
+} */
+
+
+/* .expert{
+
+
+/* .unClickedCell:hover {
+    border: 1px solid rgb(224, 197, 255);
+    height: 100px;
+    width: 100px;
+    border-bottom: 5px solid rgba(8, 107, 237, 0.356);
+    border-right: 5px solid rgba(0, 0, 0, 0.87);
+    position: relative;
+    background: linear-gradient(45deg, rgb(100, 233, 226),
+            rgb(94, 200, 238),
+            rgb(114, 82, 231),
+            rgba(62, 43, 233, 0.904),
+            rgba(45, 31, 163, 0.904));
+    color: rgba(0, 0, 0, 0.987);
+    font-size: 40px;
+    font-family: cursive;
+    transform: scale(0.8);
+    animation: animate 4s linear infinite;
+    border-radius: 8px;
+    cursor: pointer;
+} */

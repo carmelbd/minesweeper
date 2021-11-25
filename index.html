@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="/sprint/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body onload="init()">
@@ -16,19 +16,16 @@
         <button id="2" class="medium" onclick="changeLevel(this)">Medium</button>
         <button id="3" class="expert" onclick="changeLevel(this)">Expert</button>
     </div>
-    <h2 class="score" >Score: <span>0</span></h2>
+    <h2 class="score">Score: <span>0</span></h2>
     <h2 class="timer"> Time: <span>0.000</span></h2>
     <div class="modal">
         <h2> Game Over </h2>
         <button onclick="init()">Start Over</button>
     </div>
-<div class = "border"></div>
+    <div class="border"></div>
     <div class="board-container"></div>
 
-    <script src="/sprint/javascript/method.js"></script>
-    <script src="/sprint/javascript/utis.js"></script>
-    <script src="/sprint/javascript/mine.js"></script>
-    <script src="/sprint/javascript/game.js"></script>
+    <script src="javascript/game.js"></script>
 </body>
 
 </html>
